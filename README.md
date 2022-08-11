@@ -25,6 +25,11 @@ We will download [Firmata](https://github.com/firmata/arduino) and [Arduino IDE]
 
    `for more troubleshooting instructions, please refer to` **[this](https://github.com/rwaldron/johnny-five/wiki/Getting-Started#prerequisites)**
 
+### Arduino Setup
+
+I used a Servo and Connected it to `pin 8` with `5V` of Power and `GND`.
+![Arduino Setup {Figure2.0}](client/public/FYGSWN3IBXMMLB3.webp)
+
 ### Starting the project
 
 Make sure you did the **Important Notice**
@@ -63,9 +68,9 @@ yarn start
 7. Test server connection by opening `http://localhost:4000/` in the browser and receive `I am alive` response
 8. You're good to go!
 
-![Running UI Command Left {Figure2.0}](https://i.ibb.co/T15cRGP/Screen-Shot-2022-08-11-at-7-57-18-PM.png)
-![Running UI Command Right {Figure2.1}](https://i.ibb.co/3S0kyb9/Screen-Shot-2022-08-11-at-7-59-12-PM.png)
-![Arduino Test {Figure 3.0}](client/public/RealTest.gif)
+![Running UI Command Left {Figure3.0}](https://i.ibb.co/T15cRGP/Screen-Shot-2022-08-11-at-7-57-18-PM.png)
+![Running UI Command Right {Figure3.1}](https://i.ibb.co/3S0kyb9/Screen-Shot-2022-08-11-at-7-59-12-PM.png)
+![Arduino Test {Figure 4.0}](client/public/RealTest.gif)
 
 ## Troubleshooting
 
