@@ -21,7 +21,7 @@ We will download [Firmata](https://github.com/firmata/arduino) and [Arduino IDE]
 2. Create example Sketch from Files > Examples > StandardFirmataPlus
    ![Creating Arduino Firmata Sketch {Figure 1.0}](https://i.ibb.co/wMY1r4x/Screen-Shot-2022-08-10-at-11-21-52-PM.png)
 3. Upload the sketch to the Arduino
-   ![Uploading Sketch to Arduino {Figure 1.1}](https://i.ibb.co/TbTDmmy/Screen-Shot-2022-08-10-at-11-22-29-PM.png)
+   ![Uploading Sketch to Arduino {Figure 1.1}](/client/public/Screen-Shot-2022-08-10-at-11-22-29-PM.png)
 
    `for more troubleshooting instructions, please refer to` **[this](https://github.com/rwaldron/johnny-five/wiki/Getting-Started#prerequisites)**
 
