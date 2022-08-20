@@ -1,8 +1,6 @@
 # Robot Arm Movement
 
-## Using Arduino UNO & Servo Motor Developed with React Javascript
-
----
+Using Arduino UNO & Servo Motor Developed with React Javascript
 
 ## What's New?
 
