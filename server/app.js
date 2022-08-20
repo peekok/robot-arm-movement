@@ -4,8 +4,18 @@
 const express = require("express");
 const http = require("http");
 const socketIo = require("socket.io");
-
 require("dotenv").config();
+
+const initializeTables = require("./functions/initializeTables");
+const allRequires = require("./functions/tablesFunctions");
+const {
+  addMovement,
+  addCurrent,
+  getCurrentJoint,
+  getCurrentDirection,
+  getCurrentPosition,
+} = allRequires;
+
 const port = process.env["PORT"];
 const local = process.env["CORSLOCAL"];
 
@@ -15,8 +25,10 @@ const app = express();
 const events = require("events");
 const eventEmitter = new events.EventEmitter();
 
-app.use(index);
+// Checking Database & Tables before start.
+initializeTables();
 
+app.use(index);
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
@@ -28,6 +40,7 @@ const io = socketIo(server, {
 });
 
 const five = require("johnny-five");
+const { getCurrentDate } = require("./functions/tablesFunctions");
 const board = new five.Board({
   // port: "/dev/tty.usbserial-110",
   repl: false,
@@ -46,7 +59,6 @@ io.on("connection", (socket) => {
   interval = setInterval(() => getApiAndEmit(socket), 1);
 
   socket.on("handleMovements", (arg) => {
-    console.log(arg);
     if (arg.includes("")) return; // Check if values are empty.
     eventEmitter.emit("handleMovements", arg[0], arg[1], arg[2]);
   });
@@ -65,17 +77,30 @@ const getData = () => {
   return global.data;
 };
 
-const setData = (joint, direction, position) => {
+const setData = (joint, direction, position, date) => {
   global.data = {
     joint,
     direction,
     position,
+    date,
   };
 };
-
+const checkData = async () => {
+  const data = getData();
+  if (Object.keys(data).length === 0) {
+    setData(
+      await getCurrentJoint(),
+      await getCurrentDirection(),
+      await getCurrentPosition(),
+      await getCurrentDate()
+    );
+  }
+};
+checkData();
 const getApiAndEmit = (socket) => {
   const data = getData();
-  if (Object.keys(data).length === 0) return;
+  if (Object.keys(data).length === 0) {
+  }
   // Emitting a new message. Will be consumed by the client
   socket.emit("FromServer", data);
 };
@@ -108,6 +133,8 @@ board.on("ready", function () {
   const toggleMovements = function (joint, direction, position) {
     console.log(`${joint} to ${direction} ${position}`);
     setData(joint, direction, position);
+    addCurrent(joint, direction, position);
+    addMovement(joint, direction, position);
     switch (joint) {
       case "base":
         base.to(position);
