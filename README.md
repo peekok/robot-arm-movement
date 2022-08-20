@@ -2,8 +2,6 @@
 
 ## Using Arduino UNO & Servo Motor Developed with React Javascript
 
-</br>
-
 ---
 
 ## What's New?
