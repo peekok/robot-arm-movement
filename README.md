@@ -20,8 +20,6 @@
 
 #### Storing latest movement and all movements in a database is a good way to keep track of the movements of the robot arm. Whenever there was any maintenance or bug fix, the database can be used to keep track of the changes
 
-</br>
-
 ---
 
 ## Server
