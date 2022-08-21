@@ -75,7 +75,8 @@ $ yarn
 [3/4] ...
 [4/4] ...
 $ yarn start
-Compiled successfully !
+[nodemon] starting `node app.js`
+Listening on port 4000
 ```
 
 ### - Client-Side
@@ -89,8 +90,7 @@ $ yarn
 [3/4] ...
 [4/4] ...
 $ yarn start
-[nodemon] starting `node app.js`
-Listening on port 4000
+Compiled successfully !
 ```
 
 ---
