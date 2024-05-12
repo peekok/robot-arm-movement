@@ -4,6 +4,21 @@ Using Arduino UNO & Servo Motor Developed with React Javascript
 
 ## What's New?
 
+### You can now run the application using a Shell Script
+
+For Linux/Mac Users
+
+```bash
+chmod +x start.sh
+./start.sh
+```
+
+For Windows Users
+
+```pwsh
+Powershell.exe -ExecutionPolicy RemoteSigned -File  .\start.ps1
+```
+
 ### Database implementation to store latest movement and a database logger to store all movements using mysql
 
 ![What-s-New-Figure{1.0}](./client/public/Screen%20Shot%202022-08-20%20at%208.36.47%20AM.png)
@@ -31,14 +46,6 @@ Using Arduino UNO & Servo Motor Developed with React Javascript
 - `react-speech-recognition` is a library for speech recognition
 
 ---
-
-### Important Notice
-
-Make sure you have `nodemon` installed.
-
-```ruby
-$ npm install -g nodemon
-```
 
 `NOTE: We need Arduino UNO and Arduino IDE to achieve this`
 We will download [Firmata](https://github.com/firmata/arduino) and [Arduino IDE](https://www.arduino.cc/en/software) and for the Arduino to run with the `johnny-five` library, we need to deploy `firmata` to the Arduino.
@@ -75,7 +82,6 @@ $ yarn
 [3/4] ...
 [4/4] ...
 $ yarn start
-[nodemon] starting `node app.js`
 Listening on port 4000
 ```
 
@@ -100,7 +106,7 @@ Compiled successfully !
 1. Open `Visual Studio Code` or any other text editor.
 2. Start using two terminals (`server` & `client`)
 3. Install Dependencies using `yarn` on both terminals
-4. Plug up your Arduino you should receive a message saying
+4. Plug up your Arduino you should receive the following output:
 
 ```py
  #Timestamp#    #Status#           #Port#
