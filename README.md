@@ -6,14 +6,15 @@ Using Arduino UNO & Servo Motor Developed with React Javascript
 
 ### You can now run the application using a Shell Script
 
-For Linux/Mac Users
+For Linux/Mac Users:
 
 ```bash
 chmod +x start.sh
 ./start.sh
 ```
 
-For Windows Users
+For Windows Users:
+**IMPORTANT: MAKE SURE TO UNBLOCK THE POWERSHELL SCRIPT FROM THE FILE PROPERTIES**
 
 ```pwsh
 Powershell.exe -ExecutionPolicy RemoteSigned -File .\start.ps1
