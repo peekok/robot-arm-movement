@@ -16,7 +16,7 @@ chmod +x start.sh
 For Windows Users
 
 ```pwsh
-Powershell.exe -ExecutionPolicy RemoteSigned -File  .\start.ps1
+Powershell.exe -ExecutionPolicy RemoteSigned -File .\start.ps1
 ```
 
 ### Database implementation to store latest movement and a database logger to store all movements using mysql
